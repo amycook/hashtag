@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  comment = "#>",
+  fig.path = "README-"
+)
+
+library(readr)
+```
+
+### Installation
+```{r, echo = TRUE, eval = FALSE}
+devtools::install_github("sk6aus6/hashtag")
+```
+
+```{r}
+library(hashtag)
+library(readr)
+library(twitteR)
+```
+
+
+
+### Quick demo
+
+First connect to Twitter. I store my twitter API keys in a file buried deep in my computer:
+
+```{r}
+keys <- read_csv('/Users/yam/OneDrive/shared files/Statslearningcourse/twitteR/keys.csv')
+
+# setup_twitter_oauth(consumerKey, consumerSecret, accessToken, accessTokenSecret)
+
+setup_twitter_oauth(keys$key[1],
+                    keys$key[2],
+                    keys$key[3], 
+                    keys$key[4])
+
+```
+
+Then write a regular expression you want to search twitter for, and use this as an input for `hash_sentiment()`
+
+```{r, echo = TRUE}
+hash_sentiment(regex = "coriander|cilantro", num.tweets = 800,
+               method = "afinn", sentiment = "positive", num.summary = 3,
+               scrape = TRUE)
+
+
+```
+
+
+If you want to look at different parts of the same twitter scrape, set `scrape = FALSE`
+
+```{r, echo = TRUE}
+hash_sentiment(regex = "coriander|cilantro", num.tweets = 800,
+               method = "afinn", sentiment = "negative", num.summary = 3,
+               scrape = FALSE)
+
+
+```
+
+Please excuse the swearing!!
