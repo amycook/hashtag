@@ -1,5 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+### hashtag
+
+hashtag is a compilation of commands from different twitter and sentiment analysis packages that help you do simple twitter scrapes and analyses - fast.
+
+So far, only "afinn" sentiment analysis is available, which classifies words as 'positive' or 'negative' with an appropriate score. Give it a try!
+
+Note, the user must set up their own twitter API connection. I found this site helpful: [rStatistics.net](http://rstatistics.net/extracting-tweets-with-r/)
+
 ### Installation
 
 ``` r
