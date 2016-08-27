@@ -67,7 +67,7 @@ If you want to look at different parts of the same twitter scrape, set `scrape =
 
 ```{r, echo = TRUE}
 hash_sentiment(regex = "coriander|cilantro", num.tweets = 800,
-               method = "afinn", sentiment = "negative", num.summary = 3,
+               method = "afinn", sentiment = "negative", num.summary = 6,
                scrape = FALSE)
 
 
